@@ -1,7 +1,11 @@
 //Created with the help of PeaMon Page - https://www.youtube.com/watch?v=K2lF862TjU8
+                    //and John Tapley - https://www.youtube.com/watch?v=V1ocJmXeQ28
+
+//All of the music used in this project is owned by Nintendo
 
 package net.androidbootcamp.calculator;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,16 +16,24 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText Scr;
-    private float screenNumber;
-    private String operator;
+    MediaPlayer coolSound1;
+    MediaPlayer coolSound2;
+
+    private EditText screen;
+    private float screenNumber = 0;
+    private String operator = "";
+    private boolean operatorFlag = false;
     private ButtonClickListener btnClick = new ButtonClickListener();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Scr = (EditText) findViewById(R.id.editText);
+
+        coolSound1 = MediaPlayer.create(MainActivity.this, R.raw.beam);
+        coolSound2 = MediaPlayer.create(MainActivity.this, R.raw.item);
+
+        screen = (EditText) findViewById(R.id.editText);
 
         int idList[] = {R.id.button1,R.id.button2,R.id.button3, R.id.button4,R.id.button5,R.id.button6,
                 R.id.button7,R.id.button8,R.id.button9,R.id.button0,R.id.buttonMult,R.id.buttonSub,
@@ -34,24 +46,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void mMath(String str){
-        screenNumber = Float.parseFloat(Scr.getText().toString());
+    public void setOperator(String str){
+        screenNumber = Float.parseFloat(screen.getText().toString());
         operator = str;
-        Scr.setText("0");
+        operatorFlag = true;
     }
 
-    public void getKeyboard(String str){
-        String CurrentScreen = Scr.getText().toString();
+    public void replaceInput(String str){
+        screen.setText(str);
+        operatorFlag = false;
+    }
+
+    public void sequenceInput(String str){
+        String CurrentScreen = screen.getText().toString();
         if(CurrentScreen.equals("0")){
             CurrentScreen = "";
         }
         CurrentScreen += str;
-        Scr.setText(CurrentScreen);
+        screen.setText(CurrentScreen);
     }
 
-    public void mResult(){
-        float NumAf = Float.parseFloat(Scr.getText().toString());
-        float result = 0;
+    public void Calculate(){
+        float NumAf = Float.parseFloat(screen.getText().toString());
+        float result = NumAf;
         if(operator.equals("+")){
             result = screenNumber + NumAf;
         }
@@ -67,8 +84,9 @@ public class MainActivity extends AppCompatActivity {
         if(operator.equals("^")){
             result = (float) Math.pow(screenNumber, NumAf);
         }
-        Scr.setText(String.valueOf(result));
+        screen.setText(String.valueOf(result));
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -93,34 +111,55 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class ButtonClickListener implements View.OnClickListener {
+
         public void onClick(View v){
             switch(v.getId()){
                 case R.id.buttonClear:
-                    Scr.setText("0");
+                    coolSound1.start();
+                    screen.setText("0");
                     screenNumber = 0;
                     operator = "";
                     break;
                 case R.id.buttonAdd:
-                    mMath("+");
+                    coolSound1.start();
+                    Calculate();
+                    setOperator("+");
                     break;
                 case R.id.buttonSub:
-                    mMath("-");
+                    coolSound1.start();
+                    Calculate();
+                    setOperator("-");
                     break;
                 case R.id.buttonMult:
-                    mMath("*");
+                    coolSound1.start();
+                    Calculate();
+                    setOperator("*");
                     break;
                 case R.id.buttonDiv:
-                    mMath("/");
+                    coolSound1.start();
+                    Calculate();
+                    setOperator("/");
                     break;
                 case R.id.buttonPower:
-                    mMath("^");
+                    coolSound1.start();
+                    Calculate();
+                    setOperator("^");
                     break;
                 case R.id.buttonEquals:
-                    mResult();
+                    coolSound2.start();
+                    Calculate();
+                    operator = "=";
+                    screenNumber = 0;
                     break;
                 default:
+                    coolSound1.start();
                     String number = ((Button) v).getText().toString();
-                    getKeyboard(number);
+                    if(operatorFlag){
+                        replaceInput(number);
+                    }
+                    else {
+                        sequenceInput(number);
+                    }
                     break;
             }
         }
