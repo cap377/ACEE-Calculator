@@ -1,6 +1,8 @@
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
+
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
@@ -14,10 +16,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:background="#baefbd"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentStart="false">
 
         <EditText
             android:layout_width="wrap_content"
@@ -42,8 +41,7 @@
             android:width="20dp"
             android:layout_below="@+id/editText"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:backgroundTint="#f6de81" />
+            android:layout_alignParentStart="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -54,8 +52,7 @@
             android:layout_below="@+id/editText"
             android:layout_alignTop="@+id/button1"
             android:layout_toRightOf="@+id/button1"
-            android:layout_toEndOf="@+id/button1"
-            android:backgroundTint="#f6de81" />
+            android:layout_toEndOf="@+id/button1" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -65,8 +62,7 @@
             android:id="@+id/button4"
             android:layout_below="@+id/button1"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:backgroundTint="#f6de81" />
+            android:layout_alignParentStart="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -76,8 +72,7 @@
             android:id="@+id/button5"
             android:layout_below="@+id/button2"
             android:layout_toRightOf="@+id/button7"
-            android:layout_toEndOf="@+id/button7"
-            android:backgroundTint="#f6de81" />
+            android:layout_toEndOf="@+id/button7" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -87,8 +82,7 @@
             android:id="@+id/button3"
             android:layout_below="@+id/editText"
             android:layout_alignTop="@+id/buttonDiv"
-            android:layout_toRightOf="@+id/button2"
-            android:backgroundTint="#f6de81" />
+            android:layout_toRightOf="@+id/button2" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -97,8 +91,7 @@
             android:text="6"
             android:id="@+id/button6"
             android:layout_below="@+id/button3"
-            android:layout_toRightOf="@+id/button5"
-            android:backgroundTint="#f6de81" />
+            android:layout_toRightOf="@+id/button5" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -108,8 +101,7 @@
             android:id="@+id/button7"
             android:layout_below="@+id/button4"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:backgroundTint="#f6de81" />
+            android:layout_alignParentStart="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -119,8 +111,7 @@
             android:id="@+id/button8"
             android:layout_below="@+id/button5"
             android:layout_toRightOf="@+id/button0"
-            android:layout_toEndOf="@+id/button0"
-            android:backgroundTint="#f6de81" />
+            android:layout_toEndOf="@+id/button0" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -129,8 +120,7 @@
             android:text="9"
             android:id="@+id/button9"
             android:layout_below="@+id/button6"
-            android:layout_toRightOf="@+id/button8"
-            android:backgroundTint="#f6de81" />
+            android:layout_toRightOf="@+id/button8" />
 
         <Button
             android:layout_width="wrap_content"
@@ -139,8 +129,7 @@
             android:id="@+id/buttonDiv"
             android:layout_below="@+id/editText"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="#addafb" />
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -148,8 +137,7 @@
             android:text="^"
             android:id="@+id/buttonPower"
             android:layout_toLeftOf="@+id/buttonDiv"
-            android:layout_below="@+id/editText"
-            android:backgroundTint="#addafb" />
+            android:layout_below="@+id/editText" />
 
         <Button
             android:layout_width="wrap_content"
@@ -158,8 +146,7 @@
             android:id="@+id/buttonMult"
             android:layout_below="@+id/buttonDiv"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="#addafb" />
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -168,8 +155,7 @@
             android:id="@+id/buttonSub"
             android:layout_below = "@id/buttonMult"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="#addafb" />
+            android:layout_alignParentEnd="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -179,8 +165,7 @@
             android:id="@+id/button0"
             android:layout_below="@+id/button7"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:backgroundTint="#f6de81" />
+            android:layout_alignParentStart="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -189,8 +174,7 @@
             android:text="."
             android:id="@+id/buttonDot"
             android:layout_below="@+id/button8"
-            android:layout_toRightOf="@+id/button0"
-            android:backgroundTint="#f6de81" />
+            android:layout_toRightOf="@+id/button0" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -199,8 +183,7 @@
             android:text="-"
             android:id="@+id/buttonNeg"
             android:layout_below="@+id/button9"
-            android:layout_toRightOf="@+id/buttonDot"
-            android:backgroundTint="#f6de81" />
+            android:layout_toRightOf="@+id/buttonDot" />
 
         <Button
             android:layout_width="wrap_content"
@@ -209,8 +192,7 @@
             android:id="@+id/buttonAdd"
             android:layout_below = "@id/buttonSub"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="#addafb" />
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -218,8 +200,7 @@
             android:text="C"
             android:id="@+id/buttonClear"
             android:layout_below="@+id/button0"
-            android:layout_alignParentLeft="true"
-            android:backgroundTint="#f6de81" />
+            android:layout_alignParentLeft="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -228,10 +209,10 @@
             android:id="@+id/buttonEquals"
             android:layout_below = "@id/buttonAdd"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="#addafb" />
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>
 </RelativeLayout>
 </ScrollView>
+
